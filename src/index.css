@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-base: #080B11;
+  --color-bg-surface: #0D111A;
+  --color-bg-elevated: #131824;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(59, 130, 246, 0.35);
+  --color-accent-blue: #3B82F6;
+  --color-accent-warm: #E25A38;
+}
+
+/* Custom Scrollbar - calm & minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080B11;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B2232;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* Base Styles */
+html {
+  background-color: #080B11;
+  color: #F1F3F8;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #080B11;
+  min-height: 100vh;
+}
+
+/* Understated, Calm Utilities */
+@layer utilities {
+  .glass-card {
+    background: rgba(13, 17, 26, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .glass-pill {
+    background: rgba(19, 24, 36, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .glass-pill:hover {
+    border-color: rgba(59, 130, 246, 0.45);
+    transform: translateY(-1px);
+  }
+}
+
+/* Ink Draw Animation for Endnotes signature */
+@keyframes inkDraw {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-ink-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: inkDraw 3s cubic-bezier(0.45, 0, 0.15, 1) forwards;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
