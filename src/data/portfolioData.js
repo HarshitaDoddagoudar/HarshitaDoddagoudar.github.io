@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   email: "harshitadoddagoudar@gmail.com",
   github: "https://github.com/HarshitaDoddagoudar",
   linkedin: "https://www.linkedin.com/in/harshita-doddagoudar-b342a3332",
-  resumeUrl: "/resume.pdf", // User can place their actual resume.pdf in public folder
+  resumeUrl: "./Harshita_Doddagoudar_Resume.pdf",
   
   // Headlines and Taglines
   headline: "Curious about technology. Passionate about what I can create with it.",

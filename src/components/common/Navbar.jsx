@@ -54,8 +54,10 @@ export default function Navbar() {
           ))}
           <a
             href={PERSONAL_INFO.resumeUrl}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 ml-2 px-3.5 py-1 text-xs font-mono rounded-full bg-white/5 border border-white/10 text-starlight hover:border-accent-blue/40 hover:text-accent-blue transition-colors"
+            title="View Harshita's Resume (PDF)"
           >
             <FileDown className="w-3.5 h-3.5" />
             <span>Resume</span>
@@ -106,12 +108,13 @@ export default function Navbar() {
               ))}
               <a
                 href={PERSONAL_INFO.resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-accent-blue/10 border border-accent-blue/30 text-accent-blue font-mono text-xs uppercase"
               >
                 <FileDown className="w-4 h-4" />
-                Download Resume
+                View Resume (PDF)
               </a>
             </div>
           </motion.div>

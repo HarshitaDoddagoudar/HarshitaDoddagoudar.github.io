@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, MapPin, GraduationCap, Sparkles, Send, Code2, Award } from 'lucide-react';
+import { ArrowDown, MapPin, GraduationCap, Sparkles, Send, Code2, Award, FileDown } from 'lucide-react';
 import { PERSONAL_INFO, HERO_HIGHLIGHT_SKILLS } from '../../data/portfolioData';
 
 export default function HeroSection() {
@@ -104,6 +104,17 @@ export default function HeroSection() {
             >
               <Send className="w-3.5 h-3.5 text-accent-blue" />
               <span>Get in Touch</span>
+            </a>
+
+            <a
+              href={PERSONAL_INFO.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 rounded-full bg-space-850 hover:bg-space-800 border border-white/10 hover:border-accent-blue/40 text-starlight font-mono text-xs sm:text-sm tracking-wider uppercase transition-colors flex items-center gap-2"
+              title="View Harshita's Resume (PDF)"
+            >
+              <FileDown className="w-4 h-4 text-accent-blue" />
+              <span>Resume</span>
             </a>
           </motion.div>
         </div>
